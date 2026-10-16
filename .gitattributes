@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.ipynb text eol=lf
+*.aprx binary
+*.atbx binary
+*.docx binary
+*.pdf binary
+*.png binary
+*.gif binary
+Data/dhw_5km/** -text whitespace=cr-at-eol

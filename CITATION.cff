@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this course project and the original datasets when reusing it."
+title: "West Hawaiʻi Heat Stress ASM540"
+type: software
+authors:
+  - family-names: Baker
+    given-names: Drew
+repository-code: "https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540"
+date-released: 2026-10-16
+version: "2026.10.16"

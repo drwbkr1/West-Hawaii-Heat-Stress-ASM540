@@ -1,0 +1,57 @@
+{
+  "snapshot_date": "2026-10-16",
+  "arcgis": {
+    "maps": 9,
+    "layouts": 5,
+    "datasets": 74,
+    "broken_or_external_local_sources": [],
+    "representative_layout_exports": [
+      "Q1_PeakDHW_Comparison.png",
+      "Q3_Annual_North_Layout.png"
+    ],
+    "tabular_exports": [
+      "Analysis/Q1/Outputs/ReefExposure_Comparison.csv",
+      "Analysis/Q1/Outputs/ReefExposure_Thresholds.csv",
+      "Analysis/Q1/Outputs/CRW_AOI_Year_Statistics.csv",
+      "Analysis/Q1/Outputs/CRW_AOI_SST_Year_Statistics.csv",
+      "Analysis/Q2/Outputs/Q2_SiteSeason_Statistics.csv"
+    ],
+    "arcgis_version": "3.7.1"
+  },
+  "notebook": {
+    "completed": true,
+    "code_cells": 40,
+    "elapsed_seconds": 102.9,
+    "kernel": "Python 3.12.10; original course environment",
+    "image_outputs": [
+      "notebook_cell_32_0.png",
+      "notebook_cell_33_0.png"
+    ],
+    "errors": []
+  },
+  "archive": {
+    "archive": "WestHawaii_HeatStress_ArcGIS_Data.zip",
+    "bytes": 311830319,
+    "sha256": "974940ae489c0dbb9820a93d7fd6b1026e0b9cef82c074331c4eff7d396d94e8",
+    "files": 612,
+    "verified_extracted_files": 611,
+    "crc_check": "passed"
+  },
+  "file_checks": {
+    "original_source_files_unchanged": 605,
+    "forecast_csvs_numerically_match_course_exports": true,
+    "max_numeric_difference": 1.7763568394002505e-13,
+    "secret_pattern_findings": [],
+    "git_files_at_or_above_100_MiB": []
+  },
+  "helper_tests_passed": 33,
+  "visual_review": {
+    "notebook_plots": 2,
+    "representative_extracted_layouts": 2
+  },
+  "limits": [
+    "Same-machine ArcGIS Pro 3.7.1 checks; no clean-machine or cross-version verification",
+    "Basemaps require internet access",
+    "Saved project state only; StoryMap is separate"
+  ]
+}
