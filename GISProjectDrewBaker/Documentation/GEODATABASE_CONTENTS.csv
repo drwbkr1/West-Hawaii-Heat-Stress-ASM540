@@ -1,0 +1,17 @@
+dataset,type,rows
+CRW_AOI_SST_Year_Statistics,Table,2
+CRW_AOI_Year_Statistics,Table,2
+Q2_SiteSeason_Statistics,Table,12
+Q2_SiteSeason_Statistics_XYTableToPoint,FeatureClass,12
+Q3_CellForecast_Annual_Summary,Table,33
+Q3_CellForecast_DHW8_Summary,Table,3
+Q3_ForecastCells_Annual_UTM5N,FeatureClass,33
+Q3_ForecastCells_UTM5N,FeatureClass,3
+ReefExposure_Comparison,Table,6
+ReefExposure_Thresholds,Table,2
+WestHawaii_AOI_UTM5N,FeatureClass,1
+WestHawaii_CRW_2015,FeatureClass,330
+WestHawaii_CRW_2019,FeatureClass,330
+WestHawaii_GE8Days_ChangeMap,FeatureClass,135
+WestHawaii_GE8Days_Change_Statistics,Table,1
+WestHawaii_ReefHardbottom_2007,FeatureClass,437

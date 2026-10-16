@@ -24,4 +24,4 @@ Regional download cell-center bounds are latitude 18.875–20.325 and longitude 
 
 Retain NOAA/PacIOOS/NCEI/NCCOS attribution, accession URLs in logger records, and the source metadata when reusing these data. Provider terms and recommended dataset citations remain applicable. Esri basemap services are referenced by the project and are not redistributed as offline imagery.
 
-Only inputs used for the completed analysis are packaged. Pilot downloads, rejected partial files, unused bleaching context, virtual environments, and machine-specific caches are omitted.
+The [final course package](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final) contains finished GIS data only. The [earlier reproduction archive](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16) preserves the source and working data, including the original multi-island habitat collection. The analysis uses Hawaiʻi Island. Use the course package for submission and the separate archive when rebuilding the manual GIS analysis.

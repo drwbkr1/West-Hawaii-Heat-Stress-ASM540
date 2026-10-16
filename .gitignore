@@ -18,3 +18,9 @@ ImportLog/
 GpMessages/
 .env
 .env.*
+
+# Figures and CSVs are tracked in their canonical repository folders.
+GISProjectDrewBaker/Other/
+
+# Retain the earlier local working copy outside the published course folder.
+/Geodatabase/

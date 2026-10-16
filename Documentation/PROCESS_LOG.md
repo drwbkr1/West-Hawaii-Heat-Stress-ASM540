@@ -1,105 +1,166 @@
-Project is saved under Term Project\Geodatabase\WestHawaii_HeatStress
+# West Hawaiʻi heat stress process log
 
-Set the map’s horizontal coordinate system to NAD 1983 UTM Zone 5N (EPSG:26905)
+ASM54000 course project   Drew Baker
 
-Hawaii.shp has 1764 feature polygons, NAD 1983 UTM zone 5N
+StoryMap: [Following the heat around West Hawaiʻi](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc).
 
-Geoprocessing – Copy Features input Hawaii, output Hawaii habitat 2007. Outputs matched
+## Recorded dates
 
-Preserves input features/attributes in new feature class
+The dates below come from download manifests and saved geoprocessing history. They identify recorded milestones rather than every work session. Original habitat and logger download dates were not recorded.
 
-Geoprocessing – Environments, NAD 1983 UTM Zone 5N unrestricted extent
+- 2026-09-13: Verify the selected-cell satellite archive (download manifest).
+- 2026-09-26: Acquire regional satellite data, clip habitat, and create the study boundary and grid (manifest and geoprocessing history).
+- 2026-10-04: Join annual DHW summaries and classify heat exposure (geoprocessing history).
+- 2026-10-09 to 2026-10-10: Add annual SST summaries, prepare logger observations, and calculate seasonal comparisons (geoprocessing history and working record).
+- 2026-10-13: Import forecast summaries and create the annual forecast polygons (geoprocessing history).
+- 2026-10-16: Consolidate this process log and package the final GIS results.
 
-Specify coordinate system for new feature class.
+## 1 Sources and project setup
 
-Georocessing – Create Fishnet, X=-156.1 Y=18.9-19.9 to bound the study area based on geographic coordinates for exact placement.
+I address three questions: Q1 regional heat exposure and reef habitat in 2015 and 2019; Q2 satellite–underwater temperature differences by site and depth; and Q3 seven-day SST forecasts compared with persistence and seasonal baselines.
 
-Geoprocessing – Project, study bounds to  NAD 1983 UTM Zone 5N, preserved shape
+Download the data used in the analysis
 
-Geoprocessing – Clip, habitat to study AOI, 938 records
-
-Geoprocessing – Calculate Geometry Attributes, recalculated geometries in hectacres to account for clipping – Summary statistics to verify that all features have geometries
-
-Geoprocessing – Export Features, selected reefand hardbottom using expressions to create specific feature class, 437 records
-
-Regional Satellite Grid – Heat Exposure
-
-Created a 330-cell grid aligned with the downloaded CRW cell centers using 0.05° spacing and origin −156.150, 18.850 in WGS 1984. Added Cell_ID and projected the grid to NAD83 / UTM Zone 5N using NAD_1983_To_WGS_1984_3, preserving shape with a 1-meter maximum offset.
-
-Intersect – Analysis Tools: Intersect WestHawaii_CRW_Grid__Project and WestHawaii_Habitat_2007 to preserve unknown habitats and habitat cells with both the category and cell ID.
-
-Calculate Geometry Attributes – Data Management: Calculated new area for habitats split by cells.
-
-Summary Statistics – Analysis Tools: Created hectacre sum for new habitat cells. Compared against class totals
-
-Export Table – Conversion Tools: From our summary statistics, exported just the Reef and Hardbottom classes
-
-Copy Features – Data Management: A copy of the grid to hold habitat areas and heat stress stats
-
-Join Field – Data Management: added the reef and hardbottom class area statistics to analysis grid copy
-
-Calculate Geometry Attributes – Data Management: Calculate cell center coordinates for original grid to match downloaded coordinates
-
-Calculate Field – Data Management: combined the lat/lon of the cell center coordinates into a key
-
-Join Field – Data Management: Added the lat, lon, key fields created in the original grid to the analysis grid copy
-
-Merge – Data Management: merged monthly CSV files into one dataset
-
-Export Table – Conversion Tools: Remove unit rows from CSV dataset
-
-Calculate Field – Data Management: combined lat/lon from dataset to matching key
-
-Calculate Field – Data Management: wrote python function to create numeric DHW values (Double field in °C-weeks) while preserving missing data
-
-Calculate Field – Data Management created event year, valid DHW, GE 4 and GE 8 (flags for DHW ≥4 and ≥8 °C-weeks)
-
-Summary Statistics – Analysis Tools: Group by cell and year to see heat stress record in that cell for both years.
-
-Export Table – Conversion Tools: created standalone 2015/2019 annual summaries
-
-Copy Features –  Data Management: Creating separate grids for 2015/2019
-
-Join Field – Data Management: add the heat stress statistics to the year grids
-
-Calculate Field – Data Management: Add heat-stress classes to each year layer
-
-Apply Symbology from Layer – Data Management: After adjusting WestHawaii_CRW_2019 grid symbology, apply the same symbology to 2015
-
-And now we have our first comparison!!
-
-Select Layer By Attribute: Data Management – select the reef and hardbottom tiles
-
-Summary Statistics: Data Management - The case fields group their habitat areas by year and heat-stress category
-
-Calculate Field: Data Management – express each category as a percentage of all mapped reef/hardbottom area in the AOI, percentage of the area that makes up the assessed area. Uses current area summaries to define percentages.
-
-key interpretation: 100% of assessed mapped reef/hardbottom area reached ≥8 °C-weeks in 2015, compared with 76.35% in 2019
-
-Calculate Field: Data Management - retain area in both qualifying categories, assign zero to “Below 4,” and preserve missing DHW. Python function to handle No valid DHW category.
-
-Summarize Statistics: Data Management: Summarize the thresholds per year
-
-Within the assessed mapped reef/hardbottom footprint, area reaching DHW ≥4 and ≥8 °C-weeks was lower in 2019 than in 2015. This result does not support H1’s predicted direction.
-
-Export Table – Use SQL expression to select only the cells centers that fall within our AOI
-
-Merge – Merge the two tables
-
-Summary Statistics: Max DHW CW, Sum GE4, Sum GE8 for median, minimum, maximum.
-
-Regional summaries used the same 135 satellite cells with centers inside the AOI and 365 valid DHW observations in each year. Calculated cell-based median, minimum, and maximum annual peak DHW and days at DHW ≥4 and ≥8. The 117 AOI cells without valid DHW were excluded from these numerical summaries.
-
-Mapped days at DHW ≥8 using common display classes of 0, 1–30, 31–60, and 61–90 days for both years. Restricted duration layers to AOI cell centers and displayed cells without valid DHW separately.
-
-Matched the 135 common, complete-year AOI water cells by Cell_ID. Calculated change in days at DHW ≥8 as 2019 minus 2015; negative values indicate fewer threshold days in 2019.
-
-Of the 135 assessed AOI cells, 129 had fewer days at DHW ≥8 in 2019, six were unchanged, and none had more. Changes ranged from −63 to 0 days.
-
-Across 135 matched valid cells, the median change in days with DHW ≥ 8 was −16 days, ranging from −63 to 0 days. Change was calculated as 2019 minus 2015.
-
-| Measure | 2015 median (range) | 2019 median (range) |
+| Source link | Period used | What to download |
 | --- | --- | --- |
-| Annual peak DHW, °C-weeks | 11.64 (6.84–13.87) | 10.39 (0.16–11.86) |
-| Days with DHW ≥4 | 99 (80–106) | 101 (0–104) |
-| Days with DHW ≥8 | 67 (0–76) | 49 (0–63) |
+| [NOAA Coral Reef Watch via PacIOOS](https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.html) | 2015 and 2019 regional;2003–2025 selected cells | Open the ERDDAP data form. Select CRW_SST, CRW_DHW, and CRW_DHW_mask. Export daily CSVs for the regional grid and the three forecast cells. |
+| [NOAA NCEI underwater loggers](https://www.ncei.noaa.gov/erddap/tabledap/CRCP_Subsurface_Temp_Hawaii.html) | 2015 and 2019 | Filter the data form to the study area and each year. Export time, coordinates, site, depth, deployment ID, TEMP_C, and accession_url. Export distinct deployment metadata separately. |
+| [NOAA NCCOS benthic habitat](https://products.coastalscience.noaa.gov/collections/benthic/e97hawaii/data2007.aspx) | 2007 release | Choose Benthic Habitat Shapefiles Data, unzip the download, and use hawaii.shp with its companion files and metadata. |
+
+For the regional download, use cell-center bounds 18.875–20.325° latitude and −156.125 to −155.625° longitude, at 0.05° spacing. Download the full calendar years. The selected forecast cells are listed in Section 4.
+
+Create the GIS workspace
+
+1.1 Create an ArcGIS Pro project and geodatabase in a chosen location. Keep source downloads separate from derived outputs. Use Q3_SST_Forecasting.ipynb for the Python analysis. Save later outputs to a chosen location.
+
+1.2 Use Create Fishnet, polygon geometry, no label points, and WGS84 (EPSG 4326) for the study boundary and satellite grid.
+
+| Parameter | Study boundary | Satellite grid |
+| --- | --- | --- |
+| Origin longitude, latitude | −156.100, 18.900 | −156.150, 18.850 |
+| Y-axis coordinate | −156.100, 19.900 | −156.150, 19.850 |
+| Cell width × height (degrees) | 0.45 × 1.40 | 0.05 × 0.05 |
+| Rows × columns | 1 × 1 | 30 × 11 |
+
+1.3 Add a stable Cell_ID and cell-center coordinates to the grid. Create CRW_Key from latitude_longitude, each rounded to three decimals. Project the boundary and grid to NAD83 UTM Zone 5N (EPSG 26905) using NAD_1983_To_WGS_1984_3, Preserve Shape, and a 1-meter maximum offset.
+
+## 2 Prepare habitat and calculate Q1 heat exposure
+
+Prepare the habitat layers
+
+2.1 Copy hawaii.shp into the geodatabase and Clip it to the study boundary. Calculate geodesic Area_ha in hectares from the clipped geometry. Summarize by M_STRUCT, then save the Coral Reef and Hardbottom subset. Run Check Geometry on the boundary and clipped habitat.
+
+2.2 Intersect the projected grid and clipped habitat. Calculate geodesic Piece_ha for the intersection pieces. Sum Piece_ha by Cell_ID and habitat class; reconcile the totals with the clipped habitat. Join reef area to the grid by Cell_ID.
+
+| GIS check | Reference result |
+| --- | --- |
+| Clipped habitat / reef and hardbottom subset | 938 / 437 polygons |
+| Grid / habitat intersection | 330 cells / 1,381 pieces |
+| Cells containing mapped reef and hardbottom | 51 |
+| Geometry problem records | 0 |
+
+Summarize satellite records and exposed habitat
+
+2.3 Combine the regional monthly CSVs, excluding pilot files and units rows. Create CRW_Key, Event_Year, numeric SST_C, and numeric DHW_CW. Keep masked or unavailable DHW null; retain valid zero values.
+
+2.4 Calculate valid-day and DHW ≥4 / ≥8 indicators. Run Summary Statistics by CRW_Key and Event_Year: maximum DHW, valid-day count, threshold-day totals, and mean/minimum/maximum/count of SST. Keep SST statistics null where no SST observations are valid. Join each year’s summaries to a grid copy.
+
+2.5 Classify annual maximum DHW as No valid DHW, Below 4, 4 to below 8, or 8 or above. Join the classes to reef intersection pieces and sum Piece_ha by year and class. Calculate percentages using both all mapped reef area and assessed reef area. Include the ≥8 class within the ≥4 total.
+
+2.6 Select common cells with centers inside the study boundary and complete annual DHW coverage. Match by Cell_ID and calculate 2019 minus 2015 days at DHW ≥8. Use these paired cells for numerical comparisons.
+
+| Data and area check | Reference result |
+| --- | --- |
+| Regional daily records / annual cell-year records | 240,900 / 660 |
+| Annual grid records / paired water cells per year | 330 / 135 |
+| Mapped / assessed reef and hardbottom (ha) | 5,702.29 / 4,731.23 |
+| Mapped reef without valid satellite DHW (ha) | 971.05 |
+
+| Q1 measure | 2015 | 2019 |
+| --- | --- | --- |
+| Reef area reaching DHW ≥4 (ha) | 4,731.23 | 4,259.42 |
+| Reef area reaching DHW ≥8 (ha) | 4,731.23 | 3,612.16 |
+| Median annual peak DHW (°C-weeks) | 11.64 | 10.39 |
+| Median days at DHW ≥8 | 67 | 49 |
+| Median annual mean SST (°C) | 26.53 | 26.68 |
+
+Area totals use assessed reef habitat; medians use the paired water cells.
+
+## 3 Q2 Compare satellite and underwater temperatures
+
+Clean and locate the logger observations
+
+3.1 Import working copies of the logger CSVs with Copy Rows, then remove units rows. Run Delete Identical on imported observation fields except ObjectID. Check duplicate time, site, and deployment keys with Find Identical, returning duplicate records only.
+
+3.2 Create Date fields for timestamps and Double fields for temperature and depth. Convert UTC to HST by subtracting 10 hours; calculate local date, hour, and event year. Merge the cleaned yearly observations as Logger_Observations_Clean.
+
+3.3 Summarize deployment coverage, coordinates, and depth. Use XY Table To Point with longitude as X, latitude as Y, and WGS84. Spatial Join the points to the satellite grid; join each deployment’s cell key back to its observations.
+
+Match complete nights and compare seasonal windows
+
+3.4 Select 00:00 to before 06:00 HST. Summarize temperature by site, deployment, local date, year, and satellite cell. Keep complete nights: 72 readings at five-minute intervals or 360 at one-minute intervals. Match nightly means to satellite SST and DHW by cell and date.
+
+3.5 Calculate difference = satellite SST − nightly underwater mean and its square. Select common seasonal windows below. Summarize matched counts and mean difference by year, site, deployment, depth, and window. Calculate RMSD = √(mean squared difference). Combine the seasonal results into one table.
+
+| Window | OCC-HAW sites | Nights per site and year | Matched rows |
+| --- | --- | --- | --- |
+| January–June | 002, 009, 011 | 181 | 1,086 |
+| August–November | 001, 002, 009 | 122 | 732 |
+
+| Logger check | Reference result |
+| --- | --- |
+| Cleaned 2015 / 2019 observations | 420,480 / 662,927 |
+| Merged observations / deployment groups | 1,083,407 / 13 |
+| Nighttime readings / complete deployment-nights | 271,080 / 3,089 |
+| Repeated observation keys / seasonal summary rows | 0 / 12 |
+
+| August–November RMSD (°C) | 2015 | 2019 |
+| --- | --- | --- |
+| OCC-HAW-001 | 0.741 | 0.334 |
+| OCC-HAW-002 | 0.566 | 0.290 |
+| OCC-HAW-009 | 0.317 | 0.210 |
+
+Positive mean differences indicate warmer satellite values. Compare sites and depths within the same window; the comparison does not isolate a causal depth effect.
+
+## 4 Q3 Evaluate seven day SST forecasts
+
+4.1 In Q3_SST_Forecasting.ipynb, load the three-cell archive, remove units rows, standardize dates and values, and complete each cell’s daily calendar. Leave missing observations unfilled.
+
+| Forecast cell | Latitude | Longitude |
+| --- | ---: | ---: |
+| northern | 20.275 | −155.875 |
+| southern_nearshore | 19.225 | −155.875 |
+| southern_offshore | 19.225 | −155.925 |
+
+4.2 Set the target to SST seven days later. Use current SST, 1/7/14/28-day lags, 7/28-day averages, seven-day change, seasonal sine/cosine, and cell indicators. Retain complete 29-day histories and issue-date-through-target windows. Use future DHW only to group evaluation results.
+
+4.3 Apply chronological splits below. Keep training targets earlier than validation issue dates, and development targets earlier than test issue dates. Tune on validation data, then refit using eligible pre-test data.
+
+| Data stage | Period or scope | Reference rows |
+| --- | --- | --- |
+| Source / complete calendar | Three cells, 2003–2025 | 25,188 / 25,203 |
+| Eligible forecast examples | Before split exclusions | 24,819 |
+| Initial training / validation | 2003–2013 / 2014 | 11,949 / 1,074 |
+| Development refit / test | Before 2015 / 2015–2025 | 13,044 / 11,754 |
+
+4.4 Use current SST for persistence. Fit the seasonal baseline from earlier training/development records within ±15 days of the target season day. Compare random forests with depth 8/16 and minimum leaf size 5/20, 300 trees, and seed 540. Select by validation MAE, then RMSE; refit depth 16 and leaf size 20 for testing.
+
+4.5 Compare all models on identical test dates using MAE and RMSE. Summarize by cell, target year, and target-date DHW class. Calculate RF skill (%) = 100 × (1 − RF MAE / persistence MAE); positive values favor RF.
+
+| Model | MAE (°C) | RMSE (°C) |
+| --- | --- | --- |
+| Persistence | 0.2228 | 0.2817 |
+| Random forest | 0.2350 | 0.3135 |
+| Seasonal baseline | 0.5656 | 0.7070 |
+
+Bring the summaries into ArcGIS
+
+4.6 Export cell, high-DHW, and annual summaries as CSVs to a chosen location. Use XY Table To Point in WGS84 and match results to the native satellite cell polygons. Project the polygons to UTM Zone 5N.
+
+4.7 Import the annual table into the geodatabase. Add Join to the three cell polygons using a one-to-many match on Cell_Name, then Export Features to a chosen location.
+
+| Forecast output check | Reference result |
+| --- | --- |
+| Cell / high-DHW / annual summary rows | 3 / 3 / 33 |
+| Annual polygons / forecasts per cell | 33 / 3,918 |
+| Forecasts by DHW: <4 / 4 to <8 / ≥8 | 11,168 / 259 / 327 |
