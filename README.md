@@ -26,7 +26,7 @@ An ASM54000 GIS term project by Drew Baker. I compare reef heat exposure in 2015
 
 ## Open the GIS project
 
-Download **GISProjectDrewBaker.zip** from the [final GIS release](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final), extract it, and open `GISProjectDrewBaker/WestHawaii_HeatStress.aprx` in ArcGIS Pro. The package contains the finished geodatabase, maps, layouts, process log, presentation, and selected result exports. Use this release ZIP to download the geodatabase.
+Download **GISProjectDrewBaker.zip** from the [final GIS release](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final), extract it, and open `GISProjectDrewBaker/WestHawaii_HeatStress.aprx` in ArcGIS Pro. The package contains the finished geodatabase, maps, layouts, process log, presentation, selected result exports, and the executed notebook with its forecast inputs under `Other/Python`. Use this release ZIP to download the complete course package.
 
 See the [GIS folder guide](GISProjectDrewBaker/README.md) for map contents and dependencies. The earlier [reproduction archive](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16) retains the original source and working data separately from this cleaned course package.
 

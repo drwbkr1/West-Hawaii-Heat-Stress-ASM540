@@ -13,6 +13,10 @@ GISProjectDrewBaker/
   Documentation/GISPresentationDrewBaker.pptx
   Other/Figures/
   Other/Results/
+  Other/Python/Q3_SST_Forecasting.ipynb
+  Other/Python/requirements.txt
+  Other/Python/Data/dhw_5km/
+  Other/Python/Documentation/Figures/Q3_Annual_Frames/
 ```
 
 The file geodatabase contains **16 finished feature classes and tables**. Raw logger observations, import tables, temporary joins, unused habitat source islands, and other intermediate data are excluded. [Dataset names and counts](Documentation/GEODATABASE_CONTENTS.csv) are listed beside the process log.
@@ -23,4 +27,6 @@ The reef/hardbottom layer is retained as a finished habitat result and starts hi
 
 Open the project with ArcGIS Pro 3.7.1 and an internet connection for Esri basemaps. Analysis uses WGS84 and NAD83 UTM Zone 5N as documented in the process log.
 
-The separate [Python notebook](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/blob/main/Analysis/Q3/Q3_SST_Forecasting.ipynb), source CSVs, and [process log](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/blob/main/Documentation/PROCESS_LOG.md) are available in the repository. Use the release ZIP for the complete GIS folder.
+The release ZIP includes the executed Python notebook under `Other/Python`, its requirements file, the 69 selected-cell CSVs used by the forecast analysis, and the 22 frames used to assemble the animations. Open the notebook in VS Code or Jupyter with Python 3.12. See `Other/Python/README.md` for setup. The notebook and its inputs match the audited repository versions.
+
+The canonical [Python notebook](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/blob/main/Analysis/Q3/Q3_SST_Forecasting.ipynb), source CSVs, and [process log](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/blob/main/Documentation/PROCESS_LOG.md) also remain available in the repository. Use the release ZIP for the complete GIS folder.
