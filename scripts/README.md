@@ -4,4 +4,4 @@
 
 The scripts use the Python standard library. The forecast archive needed by the notebook is already included, so downloading it again is unnecessary. Existing tests are retained with their helpers. Regional default output was changed to the repository's `Data/crw_regional` folder for portability; the original analysis parameters are preserved.
 
-Q1/Q2 were completed through the guided ArcGIS steps documented in the [process log](../Documentation/PROCESS_LOG.md); these helpers do not automate the entire GIS project. Q3 is reproducible through the notebook.
+Follow the [process log](../Documentation/PROCESS_LOG.md) for the Q1/Q2 ArcGIS steps and the notebook for Q3.

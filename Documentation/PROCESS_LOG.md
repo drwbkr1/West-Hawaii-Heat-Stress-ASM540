@@ -6,7 +6,7 @@ StoryMap: [Following the heat around West Hawaiʻi](https://storymaps.arcgis.com
 
 ## Recorded dates
 
-The dates below come from download manifests and saved geoprocessing history. They identify recorded milestones rather than every work session. Original habitat and logger download dates were not recorded.
+Dates are from download manifests and saved geoprocessing history.
 
 - 2026-09-13: Verify the selected-cell satellite archive (download manifest).
 - 2026-09-26: Acquire regional satellite data, clip habitat, and create the study boundary and grid (manifest and geoprocessing history).
@@ -120,7 +120,7 @@ Match complete nights and compare seasonal windows
 | OCC-HAW-002 | 0.566 | 0.290 |
 | OCC-HAW-009 | 0.317 | 0.210 |
 
-Positive mean differences indicate warmer satellite values. Compare sites and depths within the same window; the comparison does not isolate a causal depth effect.
+Positive mean differences indicate warmer satellite values. Compare sites and depths within the same window.
 
 ## 4 Q3 Evaluate seven day SST forecasts
 

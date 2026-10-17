@@ -19,6 +19,6 @@ The nine maps cover Q1 peak DHW, threshold-day change and annual mean SST, Q2 lo
 
 The reef/hardbottom layer is retained as a finished habitat result and starts hidden in the 2015 peak-DHW map. Q2 starts with four representative 2019 logger sites, while its source layer retains all 12 seasonal summary records.
 
-ArcGIS Pro licensing and internet access to the referenced Esri basemaps are required. Analysis uses WGS84 and NAD83 UTM Zone 5N as documented in the process log. The package is checked with ArcGIS Pro 3.7.1 on the packaging machine; another machine or ArcGIS version has not been tested.
+Open the project with ArcGIS Pro 3.7.1 and an internet connection for Esri basemaps. Analysis uses WGS84 and NAD83 UTM Zone 5N as documented in the process log.
 
 The separate [Python notebook](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/blob/main/Analysis/Q3/Q3_SST_Forecasting.ipynb), source CSVs, and [process log](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/blob/main/Documentation/PROCESS_LOG.md) are available in the repository. Use the release ZIP for the complete GIS folder.

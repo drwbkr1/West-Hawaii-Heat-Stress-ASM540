@@ -26,6 +26,6 @@ Extract the release bundle first for offline regional validation. The regional r
 
 Without `--verify-only`, the regional script acquires missing data. `--sample` requests a one-week pilot in a separate test folder. Download locks, retries, partial-file retention, units/header checks, calendar/grid checks, and SHA-256 manifest checks are retained from the original helpers. Inspect a lock owner before attempting recovery; do not run parallel downloaders against the same output folder.
 
-Mask meanings are 0 valid water, 1 land, 2 missing, and 4 ice. Valid zero DHW is distinct from missing or masked data. Recorded hashes establish local byte identity; the provider does not publish a checksum for each dynamically generated subset.
+Mask meanings are 0 valid water, 1 land, 2 missing, and 4 ice. Valid zero DHW is distinct from missing or masked data. The download manifests record SHA-256 hashes for each file.
 
 The optional `run_crw.ps1` wrapper accepts `-Regional`, `-VerifyOnly`, `-Sample`, `-Full`, `-DataDirectory`, and `-PythonExecutable`. Its default folders now resolve within this repository.

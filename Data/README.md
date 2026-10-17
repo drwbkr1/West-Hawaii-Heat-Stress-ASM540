@@ -16,12 +16,12 @@
 
 There are 69 annual CSVs: 23 years at each cell. Raw ERDDAP CSVs have a second row containing units; the notebook removes that row. Preserve valid zero DHW values and treat masks/missingness separately.
 
-The archived PacIOOS series has five missing dates in 2024 at each cell: January 30, July 4–6, and July 25. This is a gap in the acquired series, not a claim that NOAA's original source files lack those dates. The notebook leaves gaps unfilled and excludes forecast windows crossing them.
+The acquired PacIOOS series has five missing dates in 2024 at each cell: January 30, July 4–6, and July 25. The notebook leaves gaps unfilled and excludes forecast windows crossing them.
 
 Regional download cell-center bounds are latitude 18.875–20.325 and longitude -156.125 to -155.625, at 0.05-degree spacing (330 cells). The study boundary is smaller; numerical comparisons use the common valid AOI cells described in the workflow.
 
 ## Attribution and use
 
-Retain NOAA/PacIOOS/NCEI/NCCOS attribution, accession URLs in logger records, and the source metadata when reusing these data. Provider terms and recommended dataset citations remain applicable. Esri basemap services are referenced by the project and are not redistributed as offline imagery.
+Retain NOAA/PacIOOS/NCEI/NCCOS attribution, accession URLs in logger records, and the source metadata when reusing these data. The project uses Esri basemap services.
 
 The [final course package](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final) contains finished GIS data only. The [earlier reproduction archive](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16) preserves the source and working data, including the original multi-island habitat collection. The analysis uses Hawaiʻi Island. Use the course package for submission and the separate archive when rebuilding the manual GIS analysis.
