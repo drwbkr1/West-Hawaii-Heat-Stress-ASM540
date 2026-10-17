@@ -1,19 +1,10 @@
 # West Hawaiʻi heat stress process log
 
-ASM54000 course project   Drew Baker
+Drew Baker   ASM540
 
 StoryMap: [Following the heat around West Hawaiʻi](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc).
 
-## Recorded dates
-
-Dates are from download manifests and saved geoprocessing history.
-
-- 2026-09-13: Verify the selected-cell satellite archive (download manifest).
-- 2026-09-26: Acquire regional satellite data, clip habitat, and create the study boundary and grid (manifest and geoprocessing history).
-- 2026-10-04: Join annual DHW summaries and classify heat exposure (geoprocessing history).
-- 2026-10-09 to 2026-10-10: Add annual SST summaries, prepare logger observations, and calculate seasonal comparisons (geoprocessing history and working record).
-- 2026-10-13: Import forecast summaries and create the annual forecast polygons (geoprocessing history).
-- 2026-10-16: Consolidate this process log and package the final GIS results.
+Processing dates (2026): Sep 13 satellite verification; Sep 26 regional data, habitat and grid; Oct 4 DHW joins; Oct 9–10 SST/logger comparisons; Oct 13 forecast GIS outputs; Oct 16 documentation and packaging.
 
 ## 1 Sources and project setup
 
