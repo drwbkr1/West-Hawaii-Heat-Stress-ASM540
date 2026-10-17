@@ -19,7 +19,7 @@ An ASM54000 GIS term project by Drew Baker. I compare reef heat exposure in 2015
 | [Process log](Documentation/PROCESS_LOG.md) | Step-by-step GIS and forecasting methods, recorded processing dates, source download links, and reference results |
 | [Word process log](GISProjectDrewBaker/Documentation/GISProcessLogDrewBaker.docx) | Course document version of the log |
 | [Forecasting notebook](Analysis/Q3/Q3_SST_Forecasting.ipynb) | Executed Python analysis, chronological splits, baselines, random forest, evaluation, and figures |
-| [Six-slide presentation](GISProjectDrewBaker/Documentation/GISPresentationDrewBaker.pptx) | Study area, GIS methods, forecast evaluation, and annual southern-cell animation |
+| [Seven-slide presentation](GISProjectDrewBaker/Documentation/GISPresentationDrewBaker.pptx) | GIS methods, forecast results, annual animation, conclusions, and further study |
 | [Maps, charts, and animations](Documentation/Figures) | Q1 exposure maps, Q2 comparisons, and annual Q3 forecast performance |
 | [Data sources](Data/README.md) | Download locations, coverage, attribution, and missing dates |
 
