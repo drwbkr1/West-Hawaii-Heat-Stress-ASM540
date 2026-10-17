@@ -1,5 +1,7 @@
 # ArcGIS course deliverables
 
+StoryMap: [In Hot Water](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc).
+
 Download and extract **GISProjectDrewBaker.zip** from the [final release](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final). Open `WestHawaii_HeatStress.aprx` inside the extracted folder.
 
 ```text

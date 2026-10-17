@@ -2,7 +2,7 @@
 
 An ASM54000 GIS term project by Drew Baker. I compare reef heat exposure in 2015 and 2019, check satellite temperatures against underwater loggers, and test seven-day sea-surface temperature forecasts.
 
-**[Process log](Documentation/PROCESS_LOG.md)** · **[Python notebook](Analysis/Q3/Q3_SST_Forecasting.ipynb)** · **[GIS project download](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final)**
+**[StoryMap: In Hot Water](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc)** · **[Process log](Documentation/PROCESS_LOG.md)** · **[Python notebook](Analysis/Q3/Q3_SST_Forecasting.ipynb)** · **[GIS project download](https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540/releases/tag/v2026.10.16-final)**
 
 ![Annual peak heat stress in West Hawaiʻi in 2015 and 2019](Documentation/Figures/Q1_PeakDHW_Comparison.png)
 
@@ -16,6 +16,7 @@ An ASM54000 GIS term project by Drew Baker. I compare reef heat exposure in 2015
 
 | Resource | Contents |
 | --- | --- |
+| [In Hot Water](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc) | Published StoryMap with interactive maps, findings, animations, and references |
 | [Process log](Documentation/PROCESS_LOG.md) | Step-by-step GIS and forecasting methods, recorded processing dates, source download links, and reference results |
 | [Word process log](GISProjectDrewBaker/Documentation/GISProcessLogDrewBaker.docx) | Course document version of the log |
 | [Forecasting notebook](Analysis/Q3/Q3_SST_Forecasting.ipynb) | Executed Python analysis, chronological splits, baselines, random forest, evaluation, and figures |
@@ -39,5 +40,3 @@ python -m venv .venv
 ```
 
 On macOS/Linux, use `.venv/bin/python` in the installation command. Open `Analysis/Q3/Q3_SST_Forecasting.ipynb` in VS Code or Jupyter, select the environment, and run all cells. The three-cell CSV archive is included. The final animation cells assemble the supplied ArcGIS map frames.
-
-[Read the StoryMap](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc).

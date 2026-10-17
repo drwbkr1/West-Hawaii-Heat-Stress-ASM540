@@ -2,9 +2,9 @@
 
 Drew Baker   ASM540
 
-StoryMap: [Following the heat around West Hawaiʻi](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc).
+StoryMap: [In Hot Water](https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc).
 
-Processing dates (2026): Sep 13 satellite verification; Sep 26 regional data, habitat and grid; Oct 4 DHW joins; Oct 9–10 SST/logger comparisons; Oct 13 forecast GIS outputs; Oct 16 documentation and packaging.
+Processing dates (2026): Sep 13 satellite verification; Sep 26 regional data, habitat and grid; Oct 4 DHW joins; Oct 9–10 SST/logger comparisons; Oct 13 forecast GIS outputs; Oct 16–17 documentation, packaging and StoryMap publication.
 
 ## 1 Sources and project setup
 

@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: Baker
     given-names: Drew
+url: "https://storymaps.arcgis.com/stories/7e6551719d15418a997e2517c2bc24cc"
 repository-code: "https://github.com/drwbkr1/West-Hawaii-Heat-Stress-ASM540"
 date-released: 2026-10-16
 version: "2026.10.16-final"
